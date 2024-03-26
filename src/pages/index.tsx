@@ -41,7 +41,7 @@ function IndexPage() {
   return (
     <div className="custom-layout">
       <Header />
-      <div>
+      <div className="content-container">
         <h2>Nákupní seznamy</h2>
         <Link href="/create-shopping-list">
           <button className="create-new">Vytvořit nový</button>
@@ -49,23 +49,28 @@ function IndexPage() {
         <hr className="hr-custom"></hr>
         <ul>
           {shoppingLists.map((list) => (
-            <li key={list.id}>
-              <Link href={`/shopping-list-items/${list.id}`}>{list.name}</Link>
-              <Link href={`/edit-shopping-list/${list.id}`}>
-                <button>Upravit</button>
-              </Link>
-              <button
-                className="delete-name"
-                onClick={() => deleteShoppingList(list.id)}
-              >
-                Smazat
-              </button>
+            <li key={list.id} className="list">
+              <div className="list-info">
+                <Link href={`/shopping-list-items/${list.id}`}>{list.name}</Link>
+              </div>
+              <div className="button-container">
+                <Link href={`/edit-shopping-list/${list.id}`}>
+                  <button className="list-buttons">Upravit</button>
+                </Link>
+                <button
+                  className="delete-name"
+                  onClick={() => deleteShoppingList(list.id)}
+                >
+                  Smazat
+                </button>
+              </div>
             </li>
           ))}
         </ul>
       </div>
     </div>
   );
+  
 }
 
 export default IndexPage;

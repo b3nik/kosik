@@ -1,88 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-    font-family: Poppins;
+  font-family: Poppins;
 }
 
 body {
-    background-color: rgb(228, 228, 228);
+  background-color: rgb(228, 228, 228);
 }
 
 h1 {
-    color: rgb(0, 0, 0);
-    font-size: 26px;
-    margin-bottom: 0px;
-    margin-top: 60px;
-    font-weight: 700;
+  color: rgb(0, 0, 0);
+  font-size: 26px;
+  margin-bottom: 0px;
+  margin-top: 60px;
+  font-weight: 700;
 }
 
 nav {
-    font-size: 16px;
-    margin-top: 20px;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
-h2{
-    font-size: 18px;
-    margin-top: 10px;
-    color: grey;
-    font-weight: 600;
+h2 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: grey;
+  font-weight: 600;
 }
 
 button {
-    border: 0;
-    padding: 10px 30px 10px 30px;
-    font-size: 14px;
-    margin-left: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
+  border: 0;
+  padding: 10px 30px 10px 30px;
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.list-buttons {
+  border: 0;
+  padding: 2px 20px 2px 20px;
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 input {
-    font-size: 14px;
-    border: 1px solid rgb(161, 161, 161);
-    padding: 8px 0px 8px 10px;
-    width: 200px;
+  font-size: 14px;
+  border: 1px solid rgb(161, 161, 161);
+  padding: 8px 0px 8px 10px;
+  width: 200px;
 }
 
 hr {
-    width: 500px;
-    background-color: rgb(222, 222, 222);
-    height: 1px;
-    border: 0;
-    margin-top: 30px;
+  width: 500px;
+  background-color: rgb(222, 222, 222);
+  height: 1px;
+  border: 0;
+  margin-top: 30px;
 }
 
 .hr-custom {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .create-new {
-    margin-left: 0px;
+  margin-left: 0px;
 }
 
 .custom-layout {
-    display: grid;
-    max-width: 500px;
-    max-height: 800px;
-    margin-inline: auto;
-    border-radius: 5px;
-    box-shadow: 1px 1px 15px rgb(174, 174, 174);
-    padding: 0px 60px 40px 60px;
-    margin-top: 30vh;
-    background-color: white;
+  display: grid;
+  max-width: 500px;
+  max-height: 800px;
+  margin-inline: auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px rgb(174, 174, 174);
+  padding: 0px 60px 40px 60px;
+  margin-top: 30vh;
+  background-color: white;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: purple;
+  text-decoration: none;
+  color: purple;
 }
 
 .delete-item-x {
-    background-color: rgb(255, 144, 144);
-    font-weight: 800;
+  background-color: rgb(255, 144, 144);
+  font-weight: 800;
+  padding: 1px 7px 1px 7px;
 }
 
 .delete-item {
-    background-color: rgb(255, 144, 144);
-    font-weight: 700;
+  background-color: rgb(255, 144, 144);
+  font-weight: 700;
+}
+
+.delete-name {
+  background-color: rgb(255, 144, 144);
+  font-weight: 700;
+  padding: 2px 20px 2px 20px;
+}
+
+.list {
+  margin-bottom: 5px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.button-container {
+  display: flex;
 }

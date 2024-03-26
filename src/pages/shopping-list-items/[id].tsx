@@ -73,14 +73,6 @@ const ShoppingListDetailPage: React.FC = () => {
       <Header/>
       <div>
         <h2>Položky seznamu</h2>
-        <ul>
-          {items.map((item) => (
-            <li key={item.id}>
-              {item.name}
-              <button className="delete-item-x" onClick={() => handleRemoveItem(item.id)}>X</button>
-            </li>
-          ))}
-        </ul>
         <form onSubmit={handleAddItem}>
           <input
             type="text"
@@ -90,6 +82,14 @@ const ShoppingListDetailPage: React.FC = () => {
           />
           <button type="submit">Přidat</button>
         </form>
+        <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              {item.name}
+              <button className="delete-item-x" onClick={() => handleRemoveItem(item.id)}>X</button>
+            </li>
+          ))}
+        </ul>
       </div>
       <div>
         <nav>
