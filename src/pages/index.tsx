@@ -50,7 +50,7 @@ function IndexPage() {
         <ul>
           {shoppingLists.map((list) => (
             <li key={list.id}>
-              <Link href={`/shopping-list-item/${list.id}`}>{list.name}</Link>
+              <Link href={`/shopping-list-items/${list.id}`}>{list.name}</Link>
               <Link href={`/edit-shopping-list/${list.id}`}>
                 <button>Upravit</button>
               </Link>

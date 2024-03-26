@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { supabase } from "../../pages/api/supabase";
+import {useState, useEffect} from "react";
+import {useRouter} from "next/router";
+import {supabase} from "@/pages/api/supabase";
 import Header from "@/components/Header";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ interface Item {
 
 const ShoppingListDetailPage: React.FC = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const {id} = router.query;
   const [items, setItems] = useState<Item[]>([]);
   const [newItem, setNewItem] = useState<string>("");
 
@@ -20,16 +20,17 @@ const ShoppingListDetailPage: React.FC = () => {
     if (!id) return;
 
     const fetchItems = async () => {
-        const { data: items, error } = await supabase
-          .from<Item>("items")
-          .select("*")
-          .eq("shopping_list_id", id);
+      const {data: items, error} = await supabase
+        .from("items")
+        .select("*")
+        .eq("shopping_list_id", id);
 
-        if (error) {
-          console.error("Error fetching items:", error.message)
-        }
+      if (error) {
+        console.error("Error fetching items:", error.message)
+      }
 
-        setItems(items || []);
+      setItems(items || []);
+    }
 
     fetchItems();
   }, [id]);
@@ -39,11 +40,13 @@ const ShoppingListDetailPage: React.FC = () => {
     if (!id || !newItem.trim()) return;
 
     supabase
-      .from<Item>("items")
-      .insert({ name: newItem, shopping_list_id: parseInt(id as string) })
-      .then(({ data, error }) => {
+      .from("items")
+      .insert({name: newItem, shopping_list_id: parseInt(id as string)})
+      .select()
+      .then(({data, error}) => {
         if (error) {
-          console.error("Error adding item:", error.message)
+          console.error("Error adding item:", error.message);
+          return;
         }
 
         setItems([...items, data![0]]);
@@ -53,10 +56,10 @@ const ShoppingListDetailPage: React.FC = () => {
 
   const handleRemoveItem = (itemId: number) => {
     supabase
-      .from<Item>("items")
+      .from("items")
       .delete()
       .eq("id", itemId)
-      .then(({ error }) => {
+      .then(({error}) => {
         if (error) {
           console.error("Error deleting item:", error.message)
         }
@@ -67,7 +70,7 @@ const ShoppingListDetailPage: React.FC = () => {
 
   return (
     <div className="custom-layout">
-      <Header />
+      <Header/>
       <div>
         <h2>Položky seznamu</h2>
         <ul>
