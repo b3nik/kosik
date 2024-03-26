@@ -29,14 +29,6 @@ const CreateShoppingListPage: React.FC = () => {
     <div className="custom-layout">
       <Header />
       <div>
-        <nav>
-          <Link href="/" className="nav-link">
-            Nákupní seznamy
-          </Link>{" "}
-          {">"} <span>Vytvoření nového seznamu</span>
-        </nav>
-      </div>
-      <div>
         <h2>Vytvořit nový seznam</h2>
         <form onSubmit={handleSubmit}>
           <input
@@ -47,6 +39,14 @@ const CreateShoppingListPage: React.FC = () => {
           />
           <button type="submit">Vytvořit</button>
         </form>
+      </div>
+      <div>
+        <nav>
+          <Link href="/" className="nav-link">
+            Nákupní seznamy
+          </Link>{" "}
+          {">"} <span>Vytvoření nového seznamu</span>
+        </nav>
       </div>
     </div>
   );

@@ -43,8 +43,9 @@ function IndexPage() {
       <div>
         <h2>Nákupní seznamy</h2>
         <Link href="/create-shopping-list">
-          <button>Vytvořit nový</button>
+          <button className="create-new">Vytvořit nový</button>
         </Link>
+        <hr className="hr-custom"></hr>
         <ul>
           {shoppingLists.map((list) => (
             <li key={list.id}>
@@ -52,7 +53,7 @@ function IndexPage() {
               <Link href={`/edit-shopping-list/${list.id}`}>
                 <button>Upravit</button>
               </Link>
-              <button onClick={() => deleteShoppingList(list.id)}>
+              <button className="delete-name" onClick={() => deleteShoppingList(list.id)}>
                 Smazat
               </button>
             </li>

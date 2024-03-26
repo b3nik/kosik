@@ -80,14 +80,6 @@ const ShoppingListDetailPage: React.FC = () => {
     <div className="custom-layout">
       <Header />
       <div>
-        <nav>
-          <Link href="/" className="nav-link">
-            Nákupní seznamy
-          </Link>{" "}
-          {">"} <span>Položky seznamu</span>
-        </nav>
-      </div>
-      <div>
         <h2>Položky seznamu</h2>
         <ul>
           {items.map((item) => (
@@ -106,6 +98,14 @@ const ShoppingListDetailPage: React.FC = () => {
           />
           <button type="submit">Přidat</button>
         </form>
+      </div>
+      <div>
+        <nav>
+          <Link href="/" className="nav-link">
+            Nákupní seznamy
+          </Link>{" "}
+          {">"} <span>Položky seznamu</span>
+        </nav>
       </div>
     </div>
   );

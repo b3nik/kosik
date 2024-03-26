@@ -4,47 +4,72 @@
     font-family: Poppins;
 }
 
+body {
+    background-color: rgb(228, 228, 228);
+}
+
 h1 {
-    color: red;
-    font-size: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 26px;
     margin-bottom: 0px;
-    margin-top: 20px;
+    margin-top: 60px;
+    font-weight: 700;
 }
 
 nav {
     font-size: 16px;
+    margin-top: 20px;
 }
 
 h2{
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 10px;
+    color: grey;
+    font-weight: 600;
 }
 
 button {
-    border-color: rgb(0, 0, 0);
-    padding-inline: 10px;
-    font-size: 16px;
+    border: 0;
+    padding: 10px 30px 10px 30px;
+    font-size: 14px;
     margin-left: 10px;
-    border-radius: 10px;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 input {
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid black;
+    font-size: 14px;
+    border: 1px solid rgb(161, 161, 161);
+    padding: 8px 0px 8px 10px;
+    width: 200px;
+}
+
+hr {
+    width: 500px;
+    background-color: rgb(222, 222, 222);
+    height: 1px;
+    border: 0;
+    margin-top: 30px;
+}
+
+.hr-custom {
+    margin-top: 40px;
+}
+
+.create-new {
+    margin-left: 0px;
 }
 
 .custom-layout {
     display: grid;
-    grid-template-columns: 1fr;
     max-width: 500px;
+    max-height: 800px;
     margin-inline: auto;
-    border: 2px black solid;
-    border-radius: 20px;
-    box-shadow: 2px 2px 5px black, inset 1px 1px 5px black;
-    padding: 0px 40px 40px 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px rgb(174, 174, 174);
+    padding: 0px 60px 40px 60px;
     margin-top: 30vh;
+    background-color: white;
 }
 
 .nav-link {
@@ -54,12 +79,10 @@ input {
 
 .delete-item-x {
     background-color: rgb(255, 144, 144);
-    color: white;
     font-weight: 800;
 }
 
 .delete-item {
     background-color: rgb(255, 144, 144);
-    color: white;
     font-weight: 700;
 }
