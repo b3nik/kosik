@@ -13,11 +13,11 @@ function IndexPage() {
       supabase
         .from("shopping_list")
         .select("*")
-        .then(({ data }) => {
+        .then(({ data, error }) => {
+          if (error) {
+            console.error("Chyba při načítání nákupních seznamů:", error.message);
+          }
           setShoppingLists(data || []);
-        })
-        .catch((error) => {
-          console.error("Chyba při načítání nákupních seznamů:", error.message);
         });
     };
 
@@ -29,12 +29,13 @@ function IndexPage() {
       .from("shopping_list")
       .delete()
       .eq("id", id)
-      .then(() => {
+      .then(({ data, error }) => {
+        if (error) {
+          console.error("Chyba při mazání nákupního seznamu:", error.message);
+        }
+
         setShoppingLists(shoppingLists.filter((list) => list.id !== id));
       })
-      .catch((error) => {
-        console.error("Chyba při mazání nákupního seznamu:", error.message);
-      });
   };
 
   return (
@@ -53,7 +54,10 @@ function IndexPage() {
               <Link href={`/edit-shopping-list/${list.id}`}>
                 <button>Upravit</button>
               </Link>
-              <button className="delete-name" onClick={() => deleteShoppingList(list.id)}>
+              <button
+                className="delete-name"
+                onClick={() => deleteShoppingList(list.id)}
+              >
                 Smazat
               </button>
             </li>

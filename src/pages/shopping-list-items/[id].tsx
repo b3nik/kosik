@@ -20,21 +20,16 @@ const ShoppingListDetailPage: React.FC = () => {
     if (!id) return;
 
     const fetchItems = async () => {
-      try {
         const { data: items, error } = await supabase
           .from<Item>("items")
           .select("*")
           .eq("shopping_list_id", id);
 
         if (error) {
-          throw error;
+          console.error("Error fetching items:", error.message)
         }
 
         setItems(items || []);
-      } catch (error) {
-        console.error("Error fetching items:", error.message);
-      }
-    };
 
     fetchItems();
   }, [id]);
@@ -48,14 +43,11 @@ const ShoppingListDetailPage: React.FC = () => {
       .insert({ name: newItem, shopping_list_id: parseInt(id as string) })
       .then(({ data, error }) => {
         if (error) {
-          throw error;
+          console.error("Error adding item:", error.message)
         }
 
         setItems([...items, data![0]]);
         setNewItem("");
-      })
-      .catch((error) => {
-        console.error("Error adding item:", error.message);
       });
   };
 
@@ -66,13 +58,10 @@ const ShoppingListDetailPage: React.FC = () => {
       .eq("id", itemId)
       .then(({ error }) => {
         if (error) {
-          throw error;
+          console.error("Error deleting item:", error.message)
         }
 
         setItems(items.filter((item) => item.id !== itemId));
-      })
-      .catch((error) => {
-        console.error("Error deleting item:", error.message);
       });
   };
 

@@ -18,14 +18,11 @@ const EditShoppingList: React.FC = () => {
         .eq('id', id)
         .then(({ data, error }) => {
           if (error) {
-            throw error;
+            console.error('Error fetching shopping list:', error.message);
           }
           if (data && data.length > 0) {
             setListName(data[0].name);
           }
-        })
-        .catch(error => {
-          console.error('Error fetching shopping list:', error.message);
         });
     }
   }, [id]);

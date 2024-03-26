@@ -15,13 +15,10 @@ const CreateShoppingListPage: React.FC = () => {
       .insert([{ name }])
       .then(({ data, error }) => {
         if (error) {
-          throw error;
+            console.error("Chyba při vytváření nákupního seznamu:", error.message)
         }
         console.log("Vytvořený seznam:", data);
         router.push("/");
-      })
-      .catch((error) => {
-        console.error("Chyba při vytváření nákupního seznamu:", error.message);
       });
   };
 
