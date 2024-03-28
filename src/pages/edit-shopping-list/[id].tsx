@@ -31,31 +31,33 @@ const EditShoppingList: React.FC = () => {
     e.preventDefault();
     if (!id) return;
 
-    try {
-      await supabase
+      const {error} = await supabase
         .from('shopping_list')
         .update({ name: listName })
         .eq('id', id);
-      console.log('Název seznamu byl aktualizován:', listName);
-      router.push('/');
-    } catch (error) {
+      
+     if (error) {
       console.error('Error updating shopping list name:', error.message);
+      return;
     }
+    console.log('Název seznamu byl aktualizován:', listName);
+      router.push('/');
   };
 
   const handleDelete = async () => {
     if (!id) return;
 
-    try {
-      await supabase
+      const {error} = await supabase
         .from('shopping_list')
         .delete()
         .eq('id', id);
+
+      if (error) {
+        console.error('Error deleting shopping list:', error.message);
+        return;
+      }
       console.log('Seznam byl smazán');
       router.push('/');
-    } catch (error) {
-      console.error('Error deleting shopping list:', error.message);
-    }
   };
 
   return (

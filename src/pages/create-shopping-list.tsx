@@ -17,7 +17,7 @@ const CreateShoppingListPage: React.FC = () => {
         if (error) {
             console.error("Chyba při vytváření nákupního seznamu:", error.message)
         }
-        console.log("Vytvořený seznam:", data);
+        console.log("Vytvořený seznam");
         router.push("/");
       });
   };

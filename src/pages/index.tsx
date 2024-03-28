@@ -15,7 +15,7 @@ function IndexPage() {
         .select("*")
         .then(({ data, error }) => {
           if (error) {
-            console.error("Chyba při načítání nákupních seznamů:", error.message);
+            console.error("Chyba při načítání nákupních seznamů", error.message);
           }
           setShoppingLists(data || []);
         });
@@ -31,9 +31,9 @@ function IndexPage() {
       .eq("id", id)
       .then(({ data, error }) => {
         if (error) {
-          console.error("Chyba při mazání nákupního seznamu:", error.message);
+          console.error("Chyba při mazání nákupního seznamu", error.message );
         }
-
+        console.log("Seznam smazán");
         setShoppingLists(shoppingLists.filter((list) => list.id !== id));
       })
   };
