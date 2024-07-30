@@ -72,15 +72,15 @@ const ShoppingListDetailPage: React.FC = () => {
     <div className="custom-layout">
       <Header/>
       <div>
-        <h2>Položky seznamu</h2>
+        <h2>Info</h2>
         <form onSubmit={handleAddItem}>
           <input
             type="text"
-            placeholder="Nová položka"
+            placeholder="Info"
             value={newItem}
             onChange={(e) => setNewItem(e.target.value)}
           />
-          <button type="submit">Přidat</button>
+          <button type="submit">Create</button>
         </form>
         <ul>
           {items.map((item) => (
@@ -94,9 +94,9 @@ const ShoppingListDetailPage: React.FC = () => {
       <div>
         <nav>
           <Link href="/" className="nav-link">
-            Nákupní seznamy
+            ToDo's
           </Link>{" "}
-          {">"} <span>Položky seznamu</span>
+          {">"} <span>Info</span>
         </nav>
       </div>
     </div>

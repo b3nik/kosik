@@ -122,3 +122,14 @@ hr {
 .button-container {
   display: flex;
 }
+
+.todo {
+  text-decoration: none;
+  color: black;
+  text-decoration: solid;
+}
+
+.edit-todo {
+  text-decoration: none;
+  color: purple;
+}

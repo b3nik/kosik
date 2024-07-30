@@ -26,23 +26,23 @@ const CreateShoppingListPage: React.FC = () => {
     <div className="custom-layout">
       <Header />
       <div>
-        <h2>Vytvořit nový seznam</h2>
+        <h2>Create new ToDo</h2>
         <form onSubmit={handleSubmit}>
           <input
-            placeholder="Název"
+            placeholder="ToDo"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <button type="submit">Vytvořit</button>
+          <button type="submit">Create</button>
         </form>
       </div>
       <div>
         <nav>
           <Link href="/" className="nav-link">
-            Nákupní seznamy
+            All ToDo's
           </Link>{" "}
-          {">"} <span>Vytvoření nového seznamu</span>
+          {">"} <span>Create a new ToDo</span>
         </nav>
       </div>
     </div>

@@ -64,16 +64,16 @@ const EditShoppingList: React.FC = () => {
     <div className="custom-layout">
       <Header />
       <div>
-        <h2>Upravit nákupní seznam</h2>
+        <h2>Edit ToDo</h2>
         <form onSubmit={handleSubmit}>
-            <input placeholder="Nový název" type="text" value={listName} onChange={(e) => setListName(e.target.value)} />
-            <button type="submit">Upravit</button>
-        <button className="delete-item" onClick={handleDelete}>Smazat</button>
+            <input placeholder="New name" type="text" value={listName} onChange={(e) => setListName(e.target.value)} />
+            <button type="submit">Edit</button>
+        <button className="delete-item" onClick={handleDelete}>Delete</button>
         </form>
       </div>
       <div>
         <nav>
-          <Link href='/'>Nákupní seznamy</Link> {'>'} <span>Úprava</span>
+          <Link className="edit-todo" href='/'>ToDo's</Link> {'>'} <span>Editing</span>
         </nav>
       </div>
     </div>
