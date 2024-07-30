@@ -94,7 +94,7 @@ const ShoppingListDetailPage: React.FC = () => {
       <div>
         <nav>
           <Link href="/" className="nav-link">
-            ToDo's
+            ToDo
           </Link>{" "}
           {">"} <span>Info</span>
         </nav>

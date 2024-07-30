@@ -73,7 +73,7 @@ const EditShoppingList: React.FC = () => {
       </div>
       <div>
         <nav>
-          <Link className="edit-todo" href='/'>ToDo's</Link> {'>'} <span>Editing</span>
+          <Link className="edit-todo" href='/'>ToDo</Link> {'>'} <span>Editing</span>
         </nav>
       </div>
     </div>

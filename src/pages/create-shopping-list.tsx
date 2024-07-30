@@ -40,7 +40,7 @@ const CreateShoppingListPage: React.FC = () => {
       <div>
         <nav>
           <Link href="/" className="nav-link">
-            All ToDo's
+            All ToDo
           </Link>{" "}
           {">"} <span>Create a new ToDo</span>
         </nav>
