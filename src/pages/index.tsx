@@ -43,7 +43,7 @@ function IndexPage() {
       <Header />
 
         <Link href="/create-shopping-list">
-          <button className="create-new">create new</button>
+          <button className="create-new">Create New ToDo</button>
         </Link>
         <hr className="hr-custom"></hr>
         <ul>

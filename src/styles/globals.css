@@ -62,11 +62,12 @@ hr {
 }
 
 .hr-custom {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .create-new {
   margin-left: 0px;
+  text-transform: none;
 }
 
 .custom-layout {
@@ -132,4 +133,8 @@ hr {
 .edit-todo {
   text-decoration: none;
   color: purple;
+}
+
+.hr-div {
+  margin-bottom: 20px;
 }

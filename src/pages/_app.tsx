@@ -6,8 +6,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Shopping Cart</title>
-        <link rel="icon" href="images/cart-icon.png" />
+        <title>ToDo</title>
+        {/* <link rel="icon" href="images/cart-icon.png" /> */}
         <meta name="title" content="shopping-cart" />
         {/* styles, fonts, google analytics,  */}
       </Head>
